@@ -1,5 +1,6 @@
 import { JSX } from "react";
 import { FaLinkedin } from "react-icons/fa";
+import { IoLogoGithub } from "react-icons/io";
 
 interface Experience {
   id: string;
@@ -112,6 +113,18 @@ const experienceRows: Experience[][] = [
       id: "Tailwind",
       content: <span>Tailwindcss</span>,
       textColor: "text-gray-500",
+    },
+  ],
+  [
+    {
+      id: "GitHub",
+      content: (
+        <span className="flex flex-row">
+          <IoLogoGithub className="text-white" />
+          GitHub
+        </span>
+      ),
+      textColor: "text-gray-700",
     },
   ],
   [{ id: "Rocket", content: <span>🚀</span> }],
