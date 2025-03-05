@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { MotionConfig } from "motion/react";
+// import { MotionConfig } from "motion/react";
 
 export const metadata: Metadata = {
   title: "sebastiandersson - portfolio",
