@@ -1,6 +1,6 @@
 "use client";
 
-import { useScroll, useTransform, motion, MotionValue } from "motion/react";
+import { useScroll, useTransform, motion } from "motion/react";
 import Link from "next/link";
 import { JSX, useMemo } from "react";
 import { FaLinkedin } from "react-icons/fa";
