@@ -10,6 +10,7 @@ export interface Experience {
   textColor?: string;
   unicodeIcon?: React.ReactNode;
   url?: string;
+  ariaLabel?: string;
 }
 
 export const experienceRows: Experience[][] = [
@@ -30,7 +31,11 @@ export const experienceRows: Experience[][] = [
   [
     { id: "React", content: "React", textColor: "text-gray-700" },
     { id: "Agile", content: "Agile", textColor: "text-gray-500" },
-    { id: "Town", content: "📍Östersund", textColor: "text-gray-700" },
+    {
+      id: "Town",
+      content: "📍Östersund",
+      textColor: "text-gray-700",
+    },
     { id: "Fullstack", content: "Fullstack", textColor: "text-gray-500" },
     { id: "AWS", content: "AWS", textColor: "text-gray-700" },
   ],
@@ -40,6 +45,7 @@ export const experienceRows: Experience[][] = [
       content: "sebastiandersson@gmail.com",
       textColor: "text-gray-500",
       unicodeIcon: <MdEmail className="text-white" />,
+      ariaLabel: "Email",
     },
   ],
   [
@@ -56,6 +62,7 @@ export const experienceRows: Experience[][] = [
       textColor: "text-gray-700",
       unicodeIcon: <FaLinkedin className="text-blue-900" />,
       url: "https://www.linkedin.com/in/sebastian-andersson-981641138",
+      ariaLabel: "LinkedIn Profile",
     },
   ],
   [
@@ -70,6 +77,7 @@ export const experienceRows: Experience[][] = [
       textColor: "text-gray-700",
       unicodeIcon: <IoLogoGithub className="text-white" />,
       url: "https://github.com/sebandrsn",
+      ariaLabel: "Github Profile",
     },
   ],
 ];

@@ -17,7 +17,7 @@ export default function ExperienceCloud() {
   );
 
   const rocketRotate = useTransform(scrollY, [0, 300], [0, -45]);
-  const rocketY = useTransform(scrollY, [300, 1000], ["0vh", "-100vh"]);
+  const rocketY = useTransform(scrollY, [300, 1000], ["0vh", "-150vh"]);
 
   return (
     <div className="space-y-4 opacity-50">
@@ -29,19 +29,20 @@ export default function ExperienceCloud() {
           {row.map((exp, expIndex) => (
             <div key={`${exp.id}-${expIndex}`} className="flex flex-row">
               {exp.unicodeIcon && (
-                <motion.div style={{ opacity: iconOpacity }}>
+                <motion.span style={{ opacity: iconOpacity }}>
                   {exp.url ? (
                     <Link
                       href={exp.url}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={exp.ariaLabel}
                     >
                       {exp.unicodeIcon}
                     </Link>
                   ) : (
-                    exp.unicodeIcon
+                    <span aria-label={exp.ariaLabel}>{exp.unicodeIcon}</span>
                   )}
-                </motion.div>
+                </motion.span>
               )}
               <div className={`flex ${exp.textColor}`}>
                 {typeof exp.content === "string" ? (

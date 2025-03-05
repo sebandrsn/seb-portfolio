@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { MotionConfig } from "motion/react";
 
 export const metadata: Metadata = {
   title: "sebastiandersson - portfolio",
@@ -22,7 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <MotionConfig reducedMotion="user">
+        <body>{children}</body>
+      </MotionConfig>
     </html>
   );
 }
