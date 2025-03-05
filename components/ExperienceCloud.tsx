@@ -2,17 +2,17 @@
 
 import { useScroll, useTransform, motion, MotionValue } from "motion/react";
 import Link from "next/link";
-import { JSX } from "react";
+import { JSX, useMemo } from "react";
 import { FaLinkedin } from "react-icons/fa";
 import { IoLogoGithub } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
+import AnimatedChar from "./AnimatedChar";
 
 interface Experience {
   id: string;
   content: string;
   textColor?: string;
   unicodeIcon?: JSX.Element;
-  opacity?: MotionValue<number>;
   url?: string;
 }
 
@@ -81,10 +81,10 @@ const experienceRows: Experience[][] = [
 export default function ExperienceCloud() {
   const { scrollY } = useScroll();
 
-  const randomOffset = Math.random() * 200;
-  const opacity = useTransform(
+  const iconRandomOffset = useMemo(() => Math.random() * 200, []);
+  const iconOpacity = useTransform(
     scrollY,
-    [randomOffset, randomOffset + 200],
+    [iconRandomOffset, iconRandomOffset + 200],
     [1, 0],
   );
 
@@ -101,8 +101,8 @@ export default function ExperienceCloud() {
           {row.map((exp, expIndex) => (
             <div key={`${exp.id}-${expIndex}`} className="flex flex-row">
               {exp.unicodeIcon && (
-                <motion.div style={{ opacity }}>
-                  {exp.url !== undefined ? (
+                <motion.div style={{ opacity: iconOpacity }}>
+                  {exp.url ? (
                     <Link
                       href={exp.url}
                       target="_blank"
@@ -111,41 +111,24 @@ export default function ExperienceCloud() {
                       {exp.unicodeIcon}
                     </Link>
                   ) : (
-                    <>{exp.unicodeIcon}</>
+                    exp.unicodeIcon
                   )}
                 </motion.div>
               )}
               <div className={`flex ${exp.textColor}`}>
                 {typeof exp.content === "string" ? (
-                  Array.from(exp.content).map((char, index) => {
-                    const randomOffset = Math.random() * 200;
-                    const opacity = useTransform(
-                      scrollY,
-                      [randomOffset, randomOffset + 200],
-                      [1, 0],
-                    );
-
-                    return (
-                      <motion.span
-                        key={`${exp.id}-${index}`}
-                        style={{ opacity }}
-                      >
-                        {exp.url !== undefined ? (
-                          <Link
-                            href={exp.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            {char}
-                          </Link>
-                        ) : (
-                          <>{char}</>
-                        )}
-                      </motion.span>
-                    );
-                  })
+                  Array.from(exp.content).map((char, index) => (
+                    <AnimatedChar
+                      key={`${exp.id}-${index}`}
+                      char={char}
+                      scrollY={scrollY}
+                      url={exp.url}
+                    />
+                  ))
                 ) : (
-                  <motion.div style={{ opacity }}>{exp.content}</motion.div>
+                  <motion.div style={{ opacity: iconOpacity }}>
+                    {exp.content}
+                  </motion.div>
                 )}
               </div>
             </div>
