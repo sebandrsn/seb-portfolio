@@ -6,9 +6,9 @@ export default function Profile() {
       <div className="flex items-center space-x-4">
         <Image
           src="/images/me.jpg"
-          alt="Sebastian"
+          alt="Sebastian Andersson a hat, wearing sunglasses and has a frozen mustache."
           width={350}
-          height={1}
+          height={467}
           className="rounded-2xl"
         />
         <div>
