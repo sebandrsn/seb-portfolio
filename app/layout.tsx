@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-// import { MotionConfig } from "motion/react";
+import { MotionConfig } from "motion/react";
 
 export const metadata: Metadata = {
   title: "sebastiandersson - portfolio",
@@ -19,6 +19,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({
@@ -28,9 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* <MotionConfig reducedMotion="user"> */}
-      <body>{children}</body>
-      {/* </MotionConfig> */}
+      <MotionConfig reducedMotion="user">
+        <body>{children}</body>
+      </MotionConfig>
     </html>
   );
 }
