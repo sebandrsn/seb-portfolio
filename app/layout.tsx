@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { MotionConfig } from "motion/react";
 
@@ -14,6 +14,11 @@ export const metadata: Metadata = {
     "Next.js",
   ],
   metadataBase: new URL("https://sebastiandersson.dev"),
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
