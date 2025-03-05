@@ -28,9 +28,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <MotionConfig reducedMotion="user">
-        <body>{children}</body>
-      </MotionConfig>
+      {/* <MotionConfig reducedMotion="user"> */}
+      <body>{children}</body>
+      {/* </MotionConfig> */}
     </html>
   );
 }
