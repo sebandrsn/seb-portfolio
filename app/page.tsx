@@ -10,6 +10,7 @@ export default function Home() {
   const { scrollY } = useScroll();
 
   const meY = useTransform(scrollY, [0, 500], ["100vh", "0vh"]);
+  const opacity = useTransform(scrollY, [200, 50], [0, 1]);
 
   return (
     <div>
@@ -22,9 +23,9 @@ export default function Home() {
           <Profile />
         </motion.div>
       </div>
-      <div className="flex justify-center">
+      <motion.div className="flex lg:justify-center" style={{ opacity }}>
         <MdOutlineKeyboardDoubleArrowDown className="fixed bottom-0 animate-bounce text-6xl text-gray-500 opacity-50" />
-      </div>
+      </motion.div>
     </div>
   );
 }
