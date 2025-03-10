@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function Profile() {
   return (
-    <div className="flex min-h-screen w-full items-center justify-center">
-      <div className="flex items-center space-x-4">
+    <div className="flex min-h-screen items-center justify-center">
+      <div className="flex flex-col items-center space-x-4 lg:flex-row">
         <Image
           src="/images/me.jpg"
           alt="Sebastian Andersson a hat, wearing sunglasses and has a frozen mustache."

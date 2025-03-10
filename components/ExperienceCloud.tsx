@@ -24,7 +24,7 @@ export default function ExperienceCloud() {
       {experienceRows.map((row) => (
         <div
           key={row.map((exp) => exp.id).join("-")}
-          className="flex flex-wrap text-6xl font-bold"
+          className="flex flex-wrap text-xl font-bold lg:text-6xl"
         >
           {row.map((exp, expIndex) => (
             <div key={`${exp.id}-${expIndex}`} className="flex flex-row">
@@ -65,7 +65,7 @@ export default function ExperienceCloud() {
         </div>
       ))}
       <motion.div
-        className="inline-flex text-6xl"
+        className="inline-flex text-xl lg:text-6xl"
         style={{
           rotate: rocketRotate,
           y: rocketY,
