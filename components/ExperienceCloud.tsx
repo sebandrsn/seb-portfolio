@@ -20,11 +20,11 @@ export default function ExperienceCloud() {
   const rocketY = useTransform(scrollY, [300, 1000], ["0vh", "-150vh"]);
 
   return (
-    <div className="space-y-4 opacity-50">
+    <div className="lg:opacity-50">
       {experienceRows.map((row) => (
         <div
           key={row.map((exp) => exp.id).join("-")}
-          className="flex flex-wrap text-xl font-bold lg:text-6xl"
+          className="flex flex-wrap text-2xl font-bold lg:text-6xl"
         >
           {row.map((exp, expIndex) => (
             <div key={`${exp.id}-${expIndex}`} className="flex flex-row">
@@ -65,7 +65,7 @@ export default function ExperienceCloud() {
         </div>
       ))}
       <motion.div
-        className="inline-flex text-xl lg:text-6xl"
+        className="inline-flex text-4xl lg:text-6xl"
         style={{
           rotate: rocketRotate,
           y: rocketY,
