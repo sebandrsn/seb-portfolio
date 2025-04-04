@@ -24,7 +24,7 @@ export default function ExperienceCloud() {
       {experienceRows.map((row) => (
         <div
           key={row.map((exp) => exp.id).join("-")}
-          className="flex flex-wrap text-2xl font-bold lg:text-6xl"
+          className="flex flex-wrap font-bold lg:text-6xl"
         >
           {row.map((exp, expIndex) => (
             <div key={`${exp.id}-${expIndex}`} className="flex flex-row">

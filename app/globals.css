@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #111827; /* Tailwind's bg-gray-900 */
+  --background: #000000;
   --foreground: #ededed; /* Light text for contrast */
 }
 
