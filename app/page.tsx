@@ -6,7 +6,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 import Profile from "@/components/Profile";
 import { Header } from "@/components/Header";
 import Image from "next/image";
-import { TypewriterText } from "@/components/TypeWritertext";
+import { TypewriterText } from "@/components/TypewriterText";
 
 export default function Home() {
   const { scrollY } = useScroll();
