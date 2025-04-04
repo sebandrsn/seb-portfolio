@@ -30,14 +30,7 @@ export default function Home() {
             className="h-auto"
           />
 
-          <div
-            className="absolute px-2 font-mono text-sm leading-tight text-green-400 sm:text-base"
-            style={{
-              top: "37%",
-              left: "23%",
-              width: "68%",
-            }}
-          >
+          <div className="absolute mb-48 px-2 font-mono text-sm leading-tight text-green-400 sm:text-base">
             <TypewriterText />
           </div>
         </motion.div>
