@@ -22,20 +22,23 @@ export default function Home() {
           className="relative flex h-full items-center justify-center lg:hidden"
           style={{ opacity }}
         >
-          <Image
-            src="/images/laptop.png"
-            alt="An animated laptop."
-            width={500}
-            height={500}
-            className="h-auto"
-          />
+          <div className="relative">
+            <Image
+              src="/images/laptop.png"
+              alt="An animated laptop."
+              width={800}
+              height={800}
+              className="h-auto w-full"
+            />
 
-          <div className="absolute top-60 h-32 w-56 px-2 font-mono text-sm leading-tight text-green-400 sm:text-base">
-            <div className="break-words whitespace-pre-wrap">
-              <TypewriterText />
+            <div className="absolute top-[30%] left-[18%] w-[65%] overflow-hidden px-2 font-mono text-sm leading-tight text-green-400 sm:text-base">
+              <div className="break-words whitespace-pre-wrap">
+                <TypewriterText />
+              </div>
             </div>
           </div>
         </motion.div>
+
         <div className="hidden lg:block">
           <ExperienceCloud />
         </div>
