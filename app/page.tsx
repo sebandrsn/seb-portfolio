@@ -30,7 +30,7 @@ export default function Home() {
             className="h-auto"
           />
 
-          <div className="absolute top-56 h-32 w-56 px-2 font-mono text-sm leading-tight text-green-400 sm:text-base">
+          <div className="absolute top-60 h-32 w-56 px-2 font-mono text-sm leading-tight text-green-400 sm:text-base">
             <div className="break-words whitespace-pre-wrap">
               <TypewriterText />
             </div>
